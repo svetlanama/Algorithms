@@ -2,7 +2,7 @@
 
 import UIKit
 
-
+/*
 // Euclid's algorithm = the max common divisor of two integers
 
 func gcd(num1: Int, num2: Int) -> Int {
@@ -60,11 +60,13 @@ for var n = N; n > 0; n/=2  {
 }
 
 toBinary();
-
+*/
 
 // TODO: Java need to move to swift
 
 // Array rows and column
+//var mass = { {true, true, true} {true, false, true} {false, false, false} {false, true, false}}
+
 /*
 boolean[][] mass = {
     {true, true, true},
@@ -122,6 +124,23 @@ public static int log2(int x) {
     return res;
     
 }*/
+
+//TODO: fix
+/*func log2(x: Int) -> Int {
+    
+    var res: Int = 0
+    //while ((x >>= 1) != 0) {//bitwise offset / divide on 2
+ 
+    while ( x / 2  != 0) {
+    res++
+    }
+    
+    return res
+    
+}
+
+log2(100000)*/
+
 
 // Histogramm
 /*
@@ -190,5 +209,160 @@ public static void main(String[] args) {
 
 */
 
-/// Natural logarithm ln(N!)
+/// Recursion of Natural logarithm ln(N!)
+/*
+public static double ln(int N, double result) {
+
+    if (N <= 1) return result;
+    
+    result += Math.log(N);
+    return ln(N - 1, result);
+}
+
+public static void main(String[] args) {
+    
+    //for (int i = 0; i <= 3; i++) {
+    System.out.println(ln(3, 0));
+    // }
+    
+}*/
+
+
+
+// Stanford courses
+/*
+link to file http://spark-public.s3.amazonaws.com/algo1/programming_prob/IntegerArray.txt
+This file contains all of the 100,000 integers between 1 and 100,000 (inclusive) in some order, with no integer repeated.
+
+Your task is to compute the number of inversions in the file given, where the ith row of the file indicates the ith entry of an array. Because of the large size of this array, you should implement the fast divide-and-conquer algorithm covered in the video lectures.*/
+
+/*
+import java.io.*;
+import java.util.*;
+import java.net.*;
+import java.io.*;
+
+/*
+* To execute Java, please define "static void main" on a class
+* named Solution.
+*
+* If you need more classes, simply define them inline.
+*/
+
+class Solution {
+    
+    static int a[] = new int[100000];
+    
+    public static long countSplitInversionsAndMerge(int start, int end, int leftStart, int leftEnd, int rightStart, int rightEnd) {
+    int subArray1[] = new int[leftEnd - leftStart + 1];
+    int subArray2[] = new int[rightEnd - rightStart + 1];
+    
+    int count = 0;
+    for (int i = leftStart; i <= leftEnd; i++) {
+    subArray1[count++] = a[i];
+    }
+    count = 0;
+    for (int i = rightStart; i <= rightEnd; i++) {
+    subArray2[count++] = a[i];
+    }
+    
+    // merge and count inversions
+    int leftPointer = 0, rightPointer = 0;
+    long inversions = 0;
+    for (int i = start; i <= end; i++) {
+    if(leftPointer >= subArray1.length) {
+    a[i] = subArray2[rightPointer++];
+    
+    }else if(rightPointer >= subArray2.length) {
+    a[i] = subArray1[leftPointer++];
+    
+    }else if (subArray1[leftPointer] <= subArray2[rightPointer]) {
+    a[i] = subArray1[leftPointer++];
+    
+    }else if(subArray1[leftPointer] > subArray2[rightPointer]) {
+    for (int j = leftPointer; j < subArray1.length; j++) {
+    //System.out.println(subArray1[j] + "," + subArray2[rightPointer]);
+    }
+    a[i] = subArray2[rightPointer++];
+    inversions = inversions + subArray1.length - leftPointer;
+    }
+    }
+    return inversions;
+    }
+    
+    
+    
+    public static long countInversionsAndSort(int start, int end) {
+    //System.out.println("start :: " + start + " end :: " + end);
+    if(end - start == 1) {
+    // two elements in array, just sort them and return if this is an inversion
+    if (a[start] > a[end]) {
+    int temp = a[start];
+    a[start] = a[end];
+    a[end] = temp;
+    return 1;
+    }else {
+    return 0;
+    }
+    }else if(end == start) {
+    // one element in array, no sorting required, can be a left / right inversion
+    return 0;
+    }else {
+    int leftStart = start;
+    int leftEnd = ((end - start) / 2 ) + start;
+    int rightStart = ((end - start) / 2 ) + start +1;
+    int rightEnd = end;
+    long leftInversions = countInversionsAndSort(leftStart, leftEnd);
+    long rightInversions = countInversionsAndSort(rightStart, rightEnd);
+    long splitInversions = countSplitInversionsAndMerge(start, end, leftStart, leftEnd, rightStart, rightEnd);
+    
+    return leftInversions + rightInversions + splitInversions;
+    }
+    }
+    
+    
+    public static void main(String[] args) {
+
+    String inputFilePath = "http://spark-public.s3.amazonaws.com/algo1/programming_prob/IntegerArray.txt";
+
+    // read and parse input file
+    try {
+    String strLine = "";
+    int count = 0;
+    InputStream fstream = new URL(inputFilePath).openStream();
+    //FileInputStream fstream = new FileInputStream(inputFilePath);
+    DataInputStream in = new DataInputStream(fstream);
+    BufferedReader br = new BufferedReader(new InputStreamReader(in));
+    while ((strLine = br.readLine()) != null) {
+    // System.out.println(strLine);
+    a[count ++] = Integer.parseInt(strLine);
+    }
+    fstream.close();
+    } catch (FileNotFoundException e) {
+    //e.printStackTrace();
+    } catch (IOException e) {
+    // e.printStackTrace();
+    }
+    
+    //System.out.println(a);
+    System.out.println(countInversionsAndSort(0, a.length-1));
+    
+    }
+}*/
+
+// print entered data in table (name and 2 numbers and result num1/num2 with 3 letters after ",")
+
+/*
+public static void printRow(String name, double x, double y) {
+    System.out.printf("| %s | %.5f | %.5f | %.3f | \n", name, x, y, x/y);
+}
+
+public static void main(String[] args) {
+    String name = "John Smith";
+    double x = 12.567;
+    double y = 45.872;
+    
+    for (int i = 0; i < 10; i++) {
+        printRow(name, x, y);
+}*/
 
