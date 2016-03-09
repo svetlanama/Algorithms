@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0C4F6558-9045-4443-B08F-6EB16074A191</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Stanford Algorithms</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B4A5CF113C940D0A739C5B19D36E6D037F7B5285</key>
+		<string>https://github.com/svetlanama/Algorithms</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Stanford Algorithms.playground</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B4A5CF113C940D0A739C5B19D36E6D037F7B5285</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/svetlanama/Algorithms</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B4A5CF113C940D0A739C5B19D36E6D037F7B5285</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B4A5CF113C940D0A739C5B19D36E6D037F7B5285</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Algorithms</string>
+		</dict>
+	</array>
+</dict>
+</plist>
