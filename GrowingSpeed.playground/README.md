@@ -22,3 +22,4 @@ And then increase n in 400 times, call it n2 = 800
 
 You will see that the logarithm function grows ON, but the n^2 grows IN In conclusion logarithms grows rather slower.
 
+![Alt text](https://github.com/svetlanama/ASAutoResizingTextView/blob/master/Example/images/animation.gif "Demo")
