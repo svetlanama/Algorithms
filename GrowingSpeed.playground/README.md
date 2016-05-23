@@ -1,4 +1,4 @@
-// Define the growing of functions logarithm and sqrt
+# Define the growing of functions logarithm and sqrt
 
     func logWithBase(base: Double, n: Double) -> Double {
       let result = log(n)/log(base)
