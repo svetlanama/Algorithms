@@ -8,5 +8,6 @@
 
 import Foundation
 
-print(insertionSort(array: [2,4,7,5]))
+//print(insertionSort(array: [2,4,7,5]))
 
+binarySearch(param: 7, sortedArr: [2,4,7,5].sorted())
